@@ -1,0 +1,9 @@
+easydict
+vllm
+biomedica-index[all] @ git+https://github.com/biomedica-marvl/biomedica-index.git
+langchain
+langchain-community
+langchain-openai
+langchain-together
+langchain-google-genai
+transformers
