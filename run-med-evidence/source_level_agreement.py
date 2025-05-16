@@ -121,7 +121,7 @@ def answer_question(question_data, rag_system=None, logger=None):
 def launch(mode='overwrite', parallel_size=0):
     config = {
         "shorthand_name": "deepseekV3_SLA",
-        "dataset_name": "manual_250-fulltext",
+        "dataset_name": "manual_284-fulltext",
         "model_type": "deepseekV3",
         "prompt_set": "source_level_agreement",
         "evidence": {
@@ -156,7 +156,7 @@ def launch(mode='overwrite', parallel_size=0):
     
     if len(skip_ids) == 0:
         logger.info(f"FULL CONFIG:\n{json.dumps(cfg, indent=2)}")
-    dataset = FlatDataset(cfg.dataset_name)
+    dataset = FlatDataset(cfg.dataset_name, skip_ids=skip_ids)
     rag_setup = (cfg, None if is_parallel else logger)
     if is_parallel:
         def init_thread():
